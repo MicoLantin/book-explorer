@@ -11,7 +11,7 @@ function BookCard({ book, onSelect }) {
       {coverUrl ? (
         <img src={coverUrl} alt={`Cover of ${book.title}`} className="book-cover" />
       ) : (
-        <div className="book-cover book-cover--placeholder">No cover</div>
+        <div className="book-cover book-cover--placeholder">Cover Lost to Time</div>
       )}
       <div className="book-info">
         <h3 className="book-title">{book.title}</h3>

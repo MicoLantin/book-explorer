@@ -10,7 +10,7 @@ function SearchBar({ query, onQueryChange, onSubmit }) {
         type="text"
         value={query}
         onChange={(e) => onQueryChange(e.target.value)}
-        placeholder="Search by title or author (e.g. dune)"
+        placeholder="Seek a tome by title or author…"
         aria-label="Search books"
       />
       <button type="submit">Search</button>

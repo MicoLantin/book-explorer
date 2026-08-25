@@ -48,10 +48,10 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Book Explorer</h1>
+      <h1>Hogwarts Library</h1>
       <SearchBar query={query} onQueryChange={setQuery} onSubmit={handleSearch} />
 
-      {loading && <p className="status-message">Loading...</p>}
+      {loading && <p className="status-message">Consulting the card catalog…</p>}
       {error && <p className="status-message status-message--error">{error}</p>}
       {!loading && !error && submittedQuery && books.length === 0 && (
         <p className="status-message">No books found.</p>
