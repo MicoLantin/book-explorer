@@ -4,7 +4,11 @@ function BookCard({ book, onSelect }) {
   const coverUrl = book.cover_i
     ? `${COVER_BASE}/${book.cover_i}-M.jpg`
     : null;
-  const author = book.author_name ? book.author_name.join(", ") : "Unknown author";
+  const author = book.author_name
+    ? book.author_name.length > 2
+      ? `${book.author_name.slice(0, 2).join(", ")}, etc.`
+      : book.author_name.join(", ")
+    : "Unknown author";
 
   return (
     <button className="book-card" onClick={() => onSelect(book)}>
