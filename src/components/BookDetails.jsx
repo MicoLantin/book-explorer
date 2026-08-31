@@ -47,7 +47,7 @@ function BookDetails({ book, onClose }) {
           {coverUrl ? (
             <img src={coverUrl} alt={`Cover of ${book.title}`} className="book-cover" />
           ) : (
-            <div className="book-cover book-cover--placeholder">Cover Lost to Time</div>
+            <div className="book-cover book-cover--placeholder">No cover</div>
           )}
           <div>
             <h2>{book.title}</h2>

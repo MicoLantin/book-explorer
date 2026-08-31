@@ -1,16 +1,7 @@
 body {
   margin: 0;
-  font-family: "EB Garamond", Georgia, serif;
-  background:
-    radial-gradient(ellipse at top, rgba(90, 60, 30, 0.35), transparent 60%),
-    radial-gradient(ellipse at bottom, rgba(0, 0, 0, 0.6), transparent 60%),
-    repeating-linear-gradient(
-      90deg,
-      #2b1b12,
-      #2b1b12 18px,
-      #24150e 18px,
-      #24150e 36px
-    );
+  font-family: "Cormorant Garamond", Georgia, serif;
+  background: #f8f2e6;
   min-height: 100vh;
-  color: #2b1b12;
+  color: #1c3a63;
 }

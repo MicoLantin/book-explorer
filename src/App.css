@@ -1,130 +1,96 @@
 :root {
-  --parchment: #f2e4c4;
-  --parchment-dark: #e3cf9d;
-  --wood: #2b1b12;
-  --ink: #3b2712;
-  --maroon: #6e0d0d;
-  --maroon-dark: #4a0808;
-  --gold: #b8860b;
-  --gold-light: #e8c766;
+  --bg: #f8f2e6;
+  --card: #fdfaf3;
+  --navy: #1c3a63;
+  --navy-soft: #3a5d8c;
+  --line: #c7d2e0;
+  --line-soft: #dfe6ee;
 }
 
 .app {
-  max-width: 960px;
-  margin: 2.5rem auto 4rem;
-  padding: 2.5rem 2.5rem 3rem;
-  background: var(--parchment);
-  background-image: radial-gradient(
-      rgba(110, 13, 13, 0.05) 1px,
-      transparent 1px
-    ),
-    radial-gradient(rgba(110, 13, 13, 0.04) 1px, transparent 1px);
-  background-size: 3px 3px, 5px 5px;
-  background-position: 0 0, 2px 2px;
-  border: 1px solid var(--gold);
-  border-radius: 6px;
-  box-shadow:
-    0 0 0 6px var(--wood),
-    0 0 0 8px var(--gold),
-    0 25px 60px rgba(0, 0, 0, 0.55);
-  position: relative;
-  color: var(--ink);
+  max-width: 980px;
+  margin: 3rem auto 5rem;
+  padding: 0 1.5rem;
+  color: var(--navy);
 }
 
 h1 {
   text-align: center;
-  font-family: "Cinzel Decorative", "Cinzel", serif;
+  font-family: "Playfair Display", serif;
   font-weight: 700;
-  font-size: 2.4rem;
-  margin: 0 0 0.4rem;
-  color: var(--maroon);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
-  letter-spacing: 0.03em;
+  font-size: 3rem;
+  margin: 0 0 1.25rem;
+  color: var(--navy);
+  letter-spacing: 0.01em;
 }
 
-.app::before {
-  content: "✦ THE RESTRICTED SECTION ✦";
-  display: block;
-  text-align: center;
-  font-family: "Cinzel", serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.35em;
-  color: var(--gold);
-  margin-bottom: 0.75rem;
-}
-
-.app::after {
+h1::after {
   content: "";
   display: block;
-  height: 3px;
-  max-width: 320px;
-  margin: 0 auto 2rem;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--gold) 20%,
-    var(--maroon) 50%,
-    var(--gold) 80%,
-    transparent
-  );
+  height: 1px;
+  max-width: 480px;
+  margin: 1.25rem auto 2rem;
+  background: var(--navy);
+  opacity: 0.35;
 }
 
 .search-bar {
   display: flex;
   gap: 0.6rem;
   justify-content: center;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.75rem;
 }
 
 .search-bar input {
   flex: 1;
   max-width: 380px;
-  padding: 0.65rem 1rem;
-  border: 2px solid var(--gold);
-  border-radius: 4px;
-  background: #fbf3dd;
-  font: 1.05rem "EB Garamond", serif;
-  color: var(--ink);
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.15);
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--navy);
+  border-radius: 3px;
+  background: var(--card);
+  font: 1.1rem "Cormorant Garamond", serif;
+  color: var(--navy);
+}
+
+.search-bar input::placeholder {
+  color: var(--navy-soft);
+  opacity: 0.6;
 }
 
 .search-bar input:focus {
   outline: none;
-  border-color: var(--maroon);
-  box-shadow:
-    inset 0 1px 3px rgba(0, 0, 0, 0.15),
-    0 0 0 3px rgba(184, 134, 11, 0.3);
+  box-shadow: 0 0 0 3px rgba(28, 58, 99, 0.15);
 }
 
 .search-bar button {
-  padding: 0.65rem 1.6rem;
-  border: 2px solid var(--gold);
-  border-radius: 4px;
-  background: linear-gradient(180deg, var(--maroon) 0%, var(--maroon-dark) 100%);
-  color: var(--gold-light);
-  font-family: "Cinzel", serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
+  padding: 0.6rem 1.75rem;
+  border: 1px solid var(--navy);
+  border-radius: 3px;
+  background: var(--navy);
+  color: var(--bg);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: box-shadow 0.2s ease, transform 0.1s ease;
+  transition: background 0.15s ease, opacity 0.15s ease;
 }
 
 .search-bar button:hover {
-  box-shadow: 0 0 12px rgba(184, 134, 11, 0.6);
-  transform: translateY(-1px);
+  background: var(--navy-soft);
 }
 
 .status-message {
   text-align: center;
-  font-family: "Cinzel", serif;
-  font-size: 1.1rem;
-  color: var(--maroon);
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--navy-soft);
   margin: 2.5rem 0;
-  letter-spacing: 0.04em;
 }
 
 .status-message--error {
-  color: #8b1a1a;
+  color: #a13d3d;
 }
 
 .book-list {
@@ -137,26 +103,20 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: linear-gradient(180deg, #fbf3dd 0%, var(--parchment-dark) 100%);
-  border: 1px solid var(--gold);
-  border-radius: 3px;
+  background: var(--card);
+  border: 1px solid var(--navy);
+  border-radius: 4px;
   padding: 0.85rem;
   cursor: pointer;
   text-align: left;
   font: inherit;
   color: inherit;
-  box-shadow:
-    0 2px 0 var(--gold),
-    0 6px 12px rgba(0, 0, 0, 0.35);
   transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .book-card:hover {
-  box-shadow:
-    0 2px 0 var(--gold),
-    0 0 14px rgba(184, 134, 11, 0.55),
-    0 10px 18px rgba(0, 0, 0, 0.4);
-  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(28, 58, 99, 0.15);
+  transform: translateY(-2px);
 }
 
 .book-cover {
@@ -165,17 +125,18 @@ h1 {
   object-fit: cover;
   border-radius: 2px;
   margin-bottom: 0.65rem;
-  background: #d8c49a;
-  border: 1px solid var(--gold);
+  background: var(--line-soft);
+  border: 1px solid var(--line);
 }
 
 .book-cover--placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--maroon);
-  font-family: "Cinzel", serif;
-  font-size: 0.85rem;
+  color: var(--navy-soft);
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 0.95rem;
   text-align: center;
 }
 
@@ -184,13 +145,13 @@ h1 {
 }
 
 .book-title {
-  font-family: "Cinzel", serif;
-  font-size: 1rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
   font-weight: 600;
   margin: 0 0 0.3rem;
-  color: var(--maroon-dark);
-  line-height: 1.25;
-  min-height: 2.5em;
+  color: var(--navy);
+  line-height: 1.3;
+  min-height: 2.6em;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -199,9 +160,9 @@ h1 {
 
 .book-author {
   margin: 0.1rem 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-style: italic;
-  color: var(--ink);
+  color: var(--navy-soft);
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -210,19 +171,18 @@ h1 {
 
 .book-year {
   display: inline-block;
-  margin: 0.35rem 0 0;
-  font-size: 0.78rem;
-  color: var(--parchment);
-  background: var(--maroon);
-  border: 1px solid var(--gold);
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--navy);
+  border: 1px solid var(--navy);
   border-radius: 999px;
-  padding: 0.1rem 0.6rem;
+  padding: 0.08rem 0.65rem;
 }
 
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(10, 5, 2, 0.75);
+  background: rgba(28, 58, 99, 0.45);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -231,41 +191,37 @@ h1 {
 }
 
 .modal {
-  background: var(--parchment);
-  background-image: radial-gradient(
-      rgba(110, 13, 13, 0.05) 1px,
-      transparent 1px
-    ),
-    radial-gradient(rgba(110, 13, 13, 0.04) 1px, transparent 1px);
-  background-size: 3px 3px, 5px 5px;
-  border: 1px solid var(--gold);
+  background: var(--bg);
+  border: 1px solid var(--navy);
   border-radius: 6px;
-  box-shadow:
-    0 0 0 6px var(--wood),
-    0 0 0 8px var(--gold),
-    0 25px 60px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 25px 60px rgba(28, 58, 99, 0.3);
   max-width: 600px;
   width: 100%;
   max-height: 85vh;
   overflow-y: auto;
   padding: 1.75rem;
   position: relative;
-  color: var(--ink);
+  color: var(--navy);
 }
 
 .modal-close {
   position: absolute;
-  top: 0.6rem;
-  right: 0.75rem;
+  top: 0.9rem;
+  right: 1rem;
   width: 2rem;
   height: 2rem;
-  border: 2px solid var(--gold);
+  border: 1px solid var(--navy);
   border-radius: 50%;
-  background: var(--maroon);
-  color: var(--gold-light);
+  background: transparent;
+  color: var(--navy);
   font-size: 1.2rem;
   line-height: 1;
   cursor: pointer;
+}
+
+.modal-close:hover {
+  background: var(--navy);
+  color: var(--bg);
 }
 
 .modal-header {
@@ -281,36 +237,37 @@ h1 {
 }
 
 .modal-header h2 {
-  font-family: "Cinzel Decorative", "Cinzel", serif;
-  font-size: 1.4rem;
-  color: var(--maroon);
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--navy);
   margin: 0 0 0.35rem;
 }
 
 .modal-header .book-author {
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 .modal-body {
   margin-top: 1.4rem;
-  border-top: 1px dashed var(--gold);
+  border-top: 1px solid var(--line);
   padding-top: 1.1rem;
 }
 
 .modal-body h4 {
-  font-family: "Cinzel", serif;
-  color: var(--maroon);
+  font-family: "Cormorant Garamond", serif;
+  color: var(--navy);
   margin: 0.9rem 0 0.4rem;
-  letter-spacing: 0.06em;
-  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
   text-transform: uppercase;
 }
 
 .book-description {
   white-space: pre-wrap;
-  color: var(--ink);
+  color: var(--navy);
   line-height: 1.6;
-  font-size: 1.02rem;
+  font-size: 1.1rem;
 }
 
 .tag-list {
@@ -321,11 +278,11 @@ h1 {
 }
 
 .tag {
-  background: var(--maroon);
-  color: var(--gold-light);
-  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--navy);
+  border: 1px solid var(--navy);
   border-radius: 999px;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.78rem;
-  font-family: "Cinzel", serif;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.85rem;
+  font-family: "Cormorant Garamond", serif;
 }
