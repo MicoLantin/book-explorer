@@ -3,6 +3,8 @@
   --card: #fdfaf3;
   --navy: #1c3a63;
   --navy-soft: #3a5d8c;
+  --sky: #7fa8cc;
+  --sky-pale: #dce9f4;
   --line: #c7d2e0;
   --line-soft: #dfe6ee;
 }
@@ -32,6 +34,14 @@ h1::after {
   margin: 1.25rem auto 2rem;
   background: var(--navy);
   opacity: 0.35;
+}
+
+.star {
+  display: inline-block;
+  color: var(--sky);
+  font-size: 0.55em;
+  vertical-align: 0.35em;
+  margin: 0 0.4rem;
 }
 
 .search-bar {
@@ -89,6 +99,17 @@ h1::after {
   margin: 2.5rem 0;
 }
 
+.status-message::before,
+.status-message::after {
+  content: "✦";
+  display: inline-block;
+  color: var(--sky);
+  font-style: normal;
+  font-size: 0.75rem;
+  vertical-align: 0.2em;
+  margin: 0 0.6rem;
+}
+
 .status-message--error {
   color: #a13d3d;
 }
@@ -100,6 +121,7 @@ h1::after {
 }
 
 .book-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -115,8 +137,33 @@ h1::after {
 }
 
 .book-card:hover {
-  box-shadow: 0 6px 16px rgba(28, 58, 99, 0.15);
+  box-shadow: 0 6px 16px rgba(127, 168, 204, 0.35);
   transform: translateY(-2px);
+}
+
+.book-card::after {
+  content: "✦";
+  position: absolute;
+  top: -0.55rem;
+  right: -0.55rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--sky);
+  background: var(--card);
+  border: 1px solid var(--sky);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.6) rotate(-25deg);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.book-card:hover::after {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
 }
 
 .book-cover {
@@ -174,9 +221,15 @@ h1::after {
   margin: 0.5rem 0 0;
   font-size: 0.85rem;
   color: var(--navy);
-  border: 1px solid var(--navy);
+  background: var(--sky-pale);
+  border: 1px solid var(--sky);
   border-radius: 999px;
   padding: 0.08rem 0.65rem;
+}
+
+.book-year::before {
+  content: "✦ ";
+  color: var(--sky);
 }
 
 .modal-overlay {
@@ -263,6 +316,11 @@ h1::after {
   text-transform: uppercase;
 }
 
+.modal-body h4::before {
+  content: "✦ ";
+  color: var(--sky);
+}
+
 .book-description {
   white-space: pre-wrap;
   color: var(--navy);
@@ -278,9 +336,9 @@ h1::after {
 }
 
 .tag {
-  background: transparent;
+  background: var(--sky-pale);
   color: var(--navy);
-  border: 1px solid var(--navy);
+  border: 1px solid var(--sky);
   border-radius: 999px;
   padding: 0.2rem 0.75rem;
   font-size: 0.85rem;

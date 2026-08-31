@@ -48,7 +48,11 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Book Explorer</h1>
+      <h1>
+        <span className="star" aria-hidden="true">✦</span>
+        Book Explorer
+        <span className="star" aria-hidden="true">✦</span>
+      </h1>
       <SearchBar query={query} onQueryChange={setQuery} onSubmit={handleSearch} />
 
       {loading && <p className="status-message">Loading...</p>}

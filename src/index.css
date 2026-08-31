@@ -1,7 +1,8 @@
 body {
   margin: 0;
   font-family: "Cormorant Garamond", Georgia, serif;
-  background: #f8f2e6;
+  background-color: #f8f2e6;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cg fill='%237fa8cc' fill-opacity='0.28'%3E%3Cpath d='M24 10 L27 20 L37 23 L27 26 L24 36 L21 26 L11 23 L21 20 Z'/%3E%3Cpath d='M120 40 L122 46 L128 48 L122 50 L120 56 L118 50 L112 48 L118 46 Z'/%3E%3Cpath d='M60 90 L63 100 L73 103 L63 106 L60 116 L57 106 L47 103 L57 100 Z'/%3E%3Cpath d='M135 120 L137 126 L143 128 L137 130 L135 136 L133 130 L127 128 L133 126 Z'/%3E%3Cpath d='M20 130 L22 136 L28 138 L22 140 L20 146 L18 140 L12 138 L18 136 Z'/%3E%3C/g%3E%3C/svg%3E");
   min-height: 100vh;
   color: #1c3a63;
 }
